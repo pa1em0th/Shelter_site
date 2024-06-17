@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Приют "В добрые лапы"</title>
+    <link rel="icon" href="png/icon.png"> <!-- Путь к файлу иконки для заголовка браузера -->
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffffffe8; /* Пастельный розовый фон */
+            color: #333;
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fcf2f2;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown:hover .dropdown-content {display: block;}
+        
+        .pet-widgets {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 150px; /* Увеличенный отступ между виджетами */
+            margin-top: 30px;
+        }
+        .pet-widgets a {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease; /* Плавное изменение масштаба при наведении и нажатии */
+        }
+        .pet-widgets img {
+            width: 150px; /* Увеличенная ширина картинки */
+            height: 150px;
+            border-radius: 8px;
+        }
+        .pet-widgets a:hover,
+        .pet-widgets a:active {
+            transform: scale(1.1); /* Увеличение размера картинки при наведении и нажатии */
+        }
+        .help-dropdown {
+            display: inline-block;
+        }
+        .help-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .help-dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .help-dropdown-content a:hover {background-color: #f9f9f9}
+        .help-dropdown:hover .help-dropdown-content {display: block;}
+        .pets-section p {
+            margin-bottom: 60px; /* Добавляем отступ под текстом */
+        }
+        .pet-widgets {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pet-widgets a {
+            margin: 0 10px;
+        }
+        .pet-widgets img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .stats {
+            font-size: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .stats-widgets {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 150px;
+        }
+        .stats-widget {
+    background-color: #d9b3b3; /* Пастельный розовый фон виджета */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 10px;
+    color: white;
+    transition: transform 0.3s ease; /* Плавное изменение размера */
+}
+.stats-widget:hover {
+    transform: scale(1.1); /* Увеличение размера виджета при наведении */
+}
+        .stats-widget {
+            background-color: #d9b3b3; /* Пастельный розовый фон виджета */
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin: 0 10px;
+            color: white;
+        }
+        .stats-widget span {
+            font-size: 50px;
+            display: block;
+        }
+        .instruction-section {
+            background: linear-gradient(to right, #f9f9f9, #f9f9f9);
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .instruction-section h2 {
+            color: #9b769b; /* Цвет заголовка */
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .slide-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px; /* Увеличенная высота для изображений */
+            overflow: hidden;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: none; /* Скрыть все слайды по умолчанию */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease;
+        }
+        .slide.active {
+            display: flex; /* Показать активный слайд */
+        }
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .slide p {
+            color:#d9b3b3;/* Цвет текста слайда */
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        .slide.fade-out p {
+            opacity: 0;
+        }
+        .help-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #6e4a6e;
+        }
+        .help-section p {
+            margin-bottom: 60px; /* Добавляем отступ под текстом */
+        }
+        .help-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 250px; /* Увеличенный отступ между иконками */
+        }
+        .help-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease; /* Плавное изменение масштаба при наведении и нажатии */
+        }
+        .help-icon img {
+            width: 100px; /* Установите желаемую ширину иконки */
+            height: auto;
+        }
+        .help-icon p {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .help-icon:hover,
+        .help-icon:active {
+            transform: scale(1.1); /* Увеличение размера иконки при наведении и нажатии */
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="png/icon.png" alt="Иконка сайта" class="icon" width="70" height="70"></a></li>
+                <li><a href="index.html"> Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <div class="dropdown">
+                    <li><a href="pets.html">Выбери друга</a>
+                        <div class="dropdown-content">
+                            <a href="cats.html">Кошки</a>
+                            <a href="dogs.html">Собаки</a>
+                        </div>
+                    </li>
+                </div>
+                <div class="help-dropdown">
+                    <li><a href="#">Как помочь</a>
+                        <div class="help-dropdown-content">
+                            <a href="donate.html">Пожертвовать</a>
+                            <a href="volunteer.html">Стать волонтером</a>
+                            <a href="foster.html">Приютить на время</a>
+                        </div>
+                    </li>
+                </div>
+                <li><a href="contact.html">Контакты</a></li>
+                <div class="contact-details">
+                        <li><a href="mailto:info@petrescue.ru">info@petrescue.ru</a></li>
+                        <li><a href="tel:+79536459463">+7 (953) 645-94-63</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="info-section">
+            <section id="home">
+                <div class="banner"> 
+                    <img src="png/banner.png" alt="Баннер приюта">
+                 </div>
+            </section>
+            <section id="about">
+                <h2>О наc</h2>
+                <p>Добро пожаловать в наш приют, где каждый питомец найдет заботу и дом. Мы работаем над тем, чтобы обеспечить лучшие условия для наших друзей с лапами и хвостами, пока они не найдут своих любящих хозяев.</p>
+                <p>К сожалению, бездомные кошки и собаки не исчезнут с улиц города; сейчас их численность регулируют путем отлова и размещения в приюты. Без нашей помощи они никогда не получат шанса на новую, более светлую и достойную жизнь, полную любви и заботы хозяина, никогда не поделятся с человеком своей безграничной нежностью.</p>
+                <p>Если вы хотите, чтобы в вашем доме поселилась маленькая пушистая радость – поищите его в приюте!</p>
+                <p>В разделе «Выбери друга» вы найдете фотографии кошек и собак, живущих в приюте, в полной мере готовых к жизни рядом с вами. Здесь вы найдете фотографии тех, кто в силу малочисленности волонтеров все еще стоит в очереди за счастьем – им очень нужна помощь и содействие, чтобы выбраться из приюта на передержку или в добрые руки!</p>
+            </section>
+            <section class="help-section">
+                <h2>Как помочь</h2>
+                <p>Вы можете поддержать наш приют различными способами, каждый из которых очень важен для нас и наших питомцев</p>
+                <div class="help-icons">
+                    <a href="donate.html" class="help-icon"><img src="png/donate-icon.png" alt="Пожертвование">
+                        <p>Пожертвование</p>
+                    </a>
+                    <a href="volunteer.html" class="help-icon"><img src="png/volunteer-icon.png" alt="Волонтерство">
+                        <p>Волонтерство</p>
+                    </a>
+                    <a href="foster.html" class="help-icon"><img src="png/foster-icon.png" alt="Приют на время">
+                        <p>Приют на время</p>
+                    </a>
+                </div>
+            </section>
+            <h2>В нашем приюте</h2>
+            <div class="stats-widgets">
+                <div class="stats-widget">
+                    <span>16 питомцев</span>
+                    <p>уже нашли дом</p>
+                </div>
+                <div class="stats-widget">
+                    <span>10 питомцев</span>
+                    <p>ищут хозяина</p>
+                </div>
+            </div>
+            <section class="pets-section">
+                <section class="pets-section">
+                    <h2>Ищут дом</h2>
+                    <p>В нашем приюте сейчас находятся кошки и собаки, которые очень ждут, чтобы найти свою любовь и заботу</p>
+                    <div class="pet-widgets">
+                        <a href="cats.html"><img src="png/cat-widget.png" alt="Кошки"></a>
+                        <a href="dogs.html"><img src="png/dog-widget.png" alt="Собаки"></a>
+                    </div>
+                </section>
+        </section>
+    </main>
+            <section class="instruction-section">
+                <h2>Как взять животное из передержки</h2>
+                <p>Следуйте нашим инструкциям, чтобы успешно взять животное из передержки и обеспечить ему лучшую жизнь.</p>
+                <div class="slide-container">
+                    <div class="slide active">
+                        <img src="png/preparation.png" alt="Подготовка"><br>
+                        <strong>Подготовка</strong><br>Определитесь с видом животного, проверьте свои возможности по уходу и изучите информацию о правильном уходе.
+                    </div>
+                    <div class="slide">
+                        <img src="png/choose_shelter.png" alt="Выбор передержки"><br>
+                        <strong>Выбор передержки</strong><br>Найдите передержку в вашем регионе и проверьте ее репутацию.
+                    </div>
+                    <div class="slide">
+                        <img src="png/contact_shelter.png" alt="Связь с передержкой"><br>
+                        <strong>Связь с передержкой</strong><br>Свяжитесь с администрацией передержки, задайте вопросы о процедуре и стоимости услуг.
+                    </div>
+                    <div class="slide">
+                        <img src="png/visit_shelter.png" alt="Посещение передержки"><br>
+                        <strong>Посещение передержки</strong><br>Посетите передержку лично, общайтесь с животными и сотрудниками.
+                    </div>
+                    <div class="slide">
+                        <img src="png/adopt_procedure.png" alt="Процедура получения животного"><br>
+                        <strong>Процедура получения животного</strong><br>Заполните необходимые документы, оплатите услуги и получите инструкции по уходу.
+                    </div>
+                    <div class="slide">
+                        <img src="png/move_animal.png" alt="Переезд животного"><br>
+                        <strong>Переезд животного</strong><br>Подготовьте транспортное средство и необходимые вещи для животного.
+                    </div>
+                    <div class="slide">
+                        <img src="png/welcome_home.png" alt="Прием животного в новом доме"><br>
+                        <strong>Прием животного в новом доме</strong><br>Установите место для животного и дайте ему время на адаптацию.
+                    </div>
+                    <div class="slide">
+                        <img src="png/vet_visit.png" alt="Посещение ветеринара"><br>
+                        <strong>Посещение ветеринара</strong><br>Запишитесь на прием к ветеринару для первичного осмотра животного.
+                    </div>
+                    <div class="slide">
+                        <img src="png/social_adaptation.png" alt="Социальная адаптация"><br>
+                        <strong>Социальная адаптация</strong><br>Включайте животное в семейную жизнь и уделяйте время общению с ним.
+                    </div>
+                    <div class="slide">
+                        <img src="png/health_care.png" alt="Поддержание здоровья и благополучия животного"><br>
+                        <strong>Поддержание здоровья и благополучия животного</strong><br>Продолжайте следить за здоровьем животного и обеспечьте правильное питание и физические нагрузки.
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="png/icon.png" alt="Логотип приюта" width="100" height="50">
+                    </div>
+                    <div class="footer-contacts">
+                        <p>Контакты:</p>
+                        <p>Адрес: ул. Приютская, 12, г. Москва, Россия</p>
+                        <p>Email: <a href="mailto:info@petrescue.ru">info@petrescue.ru</a></p>
+                        <p>Телефон: <a href="tel:+79536459463">+7 (953) 645-94-63</a></p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="index.html">Главная</a> |
+                        <a href="about.html">О нас</a> |
+                        <a href="contact.html">Контакты</a>
+                    </div>
+                </div>
+                <div class="copyright">
+                    © 2024 Приют для бездомных животных. Все права защищены.
+                </div>
+            </footer>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            slides[n].classList.add('active');
+            currentSlide = n;
+        }
+
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next >= slides.length) next = 0;
+            showSlide(next);
+        }
+
+        setInterval(nextSlide, 5000); // Переключать слайды каждые 5 секунд
+    </script>
+</body>
+</html>

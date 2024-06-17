@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши питомцы - Приют "В добрые лапы"</title>
+    <link rel="icon" href="png/icon.png">
+    <link rel="stylesheet" href="css/cats.css"> <!-- Используйте тот же CSS, если стили одинаковы -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="png/icon.png" alt="Иконка сайта" class="icon" width="70" height="70"></a></li>
+                <li><a href="index.html"> Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <div class="dropdown">
+                    <li><a href="pets.html">Выбери друга</a>
+                        <div class="dropdown-content">
+                            <a href="cats.html">Кошки</a>
+                            <a href="dogs.html">Собаки</a>
+                        </div>
+                    </li>
+                </div>
+                <div class="help-dropdown">
+                    <li><a href="#">Как помочь</a>
+                        <div class="help-dropdown-content">
+                            <a href="donate.html">Пожертвовать</a>
+                            <a href="volunteer.html">Стать волонтером</a>
+                            <a href="foster.html">Приютить на время</a>
+                        </div>
+                    </li>
+                </div>
+                <li><a href="contact.html">Контакты</a></li>
+                <div class="contact-details">
+                        <li><a href="mailto:info@petrescue.ru">info@petrescue.ru</a></li>
+                        <li><a href="tel:+79536459463">+7 (953) 645-94-63</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="info-section">
+            <section id="home">
+                <div class="banner"> 
+                    <img src="png/banner.png" alt="Баннер приюта">
+                </div>
+            </section>
+            <h1>Каталог собак</h1>
+            <p>Здесь вы можете увидеть наших дружелюбных питомцев, которые ждут своего нового дома. Выберите животных по полу или возрасту, чтобы найти идеального друга для вашей семьи.</p>
+            <div class="sort-options">
+                <button class="sort-button" data-sort="gender">Пол</button>
+                <button class="sort-button" data-sort="age">Возраст</button>
+                <button class="reset-button">Сбросить</button>
+            </div>
+        </section>
+        <section class="pets-section">
+            <ul id="petsList">
+                <!-- Карточка 1 -->
+                <li data-gender="Женский" data-age="1">
+                    <div class="pet-card">
+                        <img src="png_pets/dog3.png" alt="Собака 1">
+                        <div class="pet-info">
+                            <h3>Шарик</h3>
+                            <p><strong>Возраст:</strong> 1 год</p>
+                            <p><strong>Пол:</strong> Женский</p>
+                            <p><strong>Характер:</strong> Дружелюбный</p>
+                            <p><strong>Любит:</strong> Играть и обниматься</p>
+                            <p><strong>Не любит:</strong> Одиночество</p>
+                        </div>
+                        <button class="adopt-button" onclick="window.location.href='application.html'">Забрать питомца</button>
+                    </div>
+                </li>
+                <!-- Карточка 2 -->
+                <li data-gender="Мужской" data-age="2">
+                    <div class="pet-card">
+                        <img src="png_pets/dog2.png" alt="Собака 2">
+                        <div class="pet-info">
+                            <h3>Тузик</h3>
+                            <p><strong>Возраст:</strong> 2 года</p>
+                            <p><strong>Пол:</strong> Мужской</p>
+                            <p><strong>Характер:</strong> Ласковый</p>
+                            <p><strong>Любит:</strong> Ласку</p>
+                            <p><strong>Не любит:</strong> Громкие звуки</p>
+                        </div>
+                        <button class="adopt-button" onclick="window.location.href='application.html'">Забрать питомца</button>
+                    </div>
+                </li>
+                <!-- Карточка 3 -->
+                <li data-gender="Женский" data-age="3">
+                    <div class="pet-card">
+                        <img src="png_pets/dog1.png" alt="Собака 3">
+                        <div class="pet-info">
+                            <h3>Бобик</h3>
+                            <p><strong>Возраст:</strong> 3 года</p>
+                            <p><strong>Пол:</strong> Женский</p>
+                            <p><strong>Характер:</strong> Активная</p>
+                            <p><strong>Любит:</strong> Активные игры</p>
+                            <p><strong>Не любит:</strong> Сон днем</p>
+                        </div>
+                        <button class="adopt-button" onclick="window.location.href='application.html'">Забрать питомца</button>
+                    </div>
+                </li>
+                <!-- Карточка 4 -->
+                <li data-gender="Мужской" data-age="4">
+                    <div class="pet-card">
+                        <img src="png_pets/dog4.png" alt="Собака 4">
+                        <div class="pet-info">
+                            <h3>Дружок</h3>
+                            <p><strong>Возраст:</strong> 4 года</p>
+                            <p><strong>Пол:</strong> Мужской</p>
+                            <p><strong>Характер:</strong> Спокойный</p>
+                            <p><strong>Любит:</strong> Посидеть на солнышке</p>
+                            <p><strong>Не любит:</strong> Шум во время сна</p>
+                        </div>
+                        <button class="adopt-button" onclick="window.location.href='application.html'">Забрать питомца</button>
+                    </div>
+                </li>
+                <!-- Карточка 5 -->
+                <li data-gender="Женский" data-age="5">
+                    <div class="pet-card">
+                        <img src="png_pets/dog5.png" alt="Собака 5">
+                        <div class="pet-info">
+                            <h3>Шарик</h3>
+                            <p><strong>Возраст:</strong> 5 лет</p>
+                            <p><strong>Пол:</strong> Женский</p>
+                            <p><strong>Характер:</strong> Жизнерадостный</p>
+                            <p><strong>Любит:</strong> Игры с веревками</p>
+                            <p><strong>Не любит:</strong> Сильные запахи</p>
+                        </div>
+                        <button class="adopt-button" onclick="window.location.href='application.html'">Забрать питомца</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+                <!-- Добавьте остальные карточки собак аналогично -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="png/icon.png" alt="Логотип приюта" width="100" height="50">
+            </div>
+            <div class="footer-contacts">
+                <p>Контакты:</p>
+                <p>Адрес: ул. Приютская, 12, г. Москва, Россия</p>
+                <p>Email: <a href="mailto:info@petrescue.ru">info@petrescue.ru</a></p>
+                <p>Телефон: <a href="tel:+79536459463">+7 (953) 645-94-63</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Главная</a> |
+                <a href="about.html">О нас</a> |
+                <a href="contact.html">Контакты</a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2024 Приют для бездомных животных. Все права защищены.
+        </div>
+    </footer>
+    <script src="js/dogs.js"></script> <!-- Используйте другой JS, если нужно -->
+</body>
+</html>

@@ -1,0 +1,291 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Изменение шрифта на Comic Sans */
+    line-height: 1.6;
+    color: #333;
+    background-color: rgb(255, 255, 255); /* Розоватый фон */
+    font-size: 18px; /* Увеличение размера шрифта */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Стили для иконки сайта */
+.icon {
+    transition: transform 0.3s ease; /* Плавное изменение масштаба при наведении */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Увеличение размера иконки при наведении */
+}
+
+/* Стили для всей навигации */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+/* Стили для активного состояния ссылки (если нужно) */
+.icon:active {
+    transform: scale(1.05); /* Небольшое увеличение размера при нажатии */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Стили для хедера */
+header {
+    background-color: #f9e4e8;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    background-color: #f9e4e8; /* Розовый фон ссылок */
+    font-size: 18px; /* Увеличение размера шрифта ссылок */
+}
+
+nav ul li a:hover {
+    background-color: #f6d1d6; /* Тёмно-розовый фон при наведении */
+}
+.icon:hover {
+    transform: scale(1.1); /* Увеличение размера иконки при наведении */
+    background-color: #f9e4e8; /* Возвращаем фон к исходному цвету */
+}
+
+/* Стили для основного контента */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background-color:  #e9bdc6;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.copyright {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #daa5ad;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-contacts p,
+.footer-links a {
+    margin: 5px 0;
+    color: #fff;
+}
+
+.footer-links a {
+    text-decoration: none;
+}
+
+.footer-bottom {
+    background-color: #111;
+    padding: 10px 0;
+    text-align: center;
+}
+.banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.info-section {
+    margin-bottom: 30px;
+}
+
+.info-section h2 {
+    color:#9b769b;
+    font-size: 24px; /* Увеличение размера шрифта заголовков */
+}
+
+.info-section p {
+    line-height: 1.6;
+    font-size: 18px; /* Увеличение размера шрифта текста */
+}
+
+.pets-section {
+    margin-top: 100px;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.pet-slider {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.pet-slider button {
+    margin: 0 10px;
+    background-color: #f6d1d6; /* Розовый фон кнопок */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Увеличение размера шрифта кнопок */
+}
+
+.pet-slider button:hover {
+    background-color: #e9b8c2; /* Светло-розовый фон кнопок при наведении */
+}
+
+.pet-card {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.pet-card.active {
+    display: block;
+}
+
+.info-section,
+.pets-section {
+    text-align: center; /* Центрирование текста */
+}
+
+.pet-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.pet-card {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.pet-card.active {
+    display: block;
+}
+.icon {
+    margin-right: 10px; /* Отступ справа для иконки */
+    vertical-align: middle; /* Выравнивание по середине */
+}
+.sort-options {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sort-button,
+.reset-button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    color: white;
+}
+
+.sort-button:hover,
+.reset-button:hover {
+    background-color:#9d839d;
+}
+
+.sort-button {
+    background-color: rgb(202, 175, 202);
+}
+
+.reset-button {
+    background-color: rgb(202, 175, 202);
+}
+
+.reset-button:hover {
+    background-color: rgb(202, 175, 202);
+}
+.help-section p {
+    margin-bottom: 80px; /* Добавляем отступ под текстом */
+}
+.back-to-home a {
+    font-weight: bold; /* Жирный шрифт */
+    color:  #9b769b; /* Исходный цвет текста */
+    transition: color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+.back-to-home a:hover {
+    color:  #835f83; /* Темный цвет текста при наведении */
+}
+/* Стили для контактной информации в хедере */
+.contact-details {
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    flex-direction: column; /* Элементы будут расположены друг под другом */
+    align-items: flex-start; /* Выравнивание по левому краю */
+}
+
+.contact-details li {
+    margin-bottom: 13px; /* Отступ между элементами */
+    font-size: 16px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+}
+
+.contact-details a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #9b769b; /* Цвет ссылок */
+    transition: color 0.5s ease; /* Плавный переход цвета при наведении */
+}
+
+.contact-details a:hover {
+    color: #835f83; /* Изменение цвета при наведении */
+}

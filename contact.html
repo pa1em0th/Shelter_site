@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Приют "В добрые лапы"</title>
+    <link rel="icon" href="png/icon.png"> <!-- Путь к файлу иконки для заголовка браузера -->
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffffffe8;
+            color: #333;
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown:hover .dropdown-content {display: block;}
+        .help-dropdown {
+            display: inline-block;
+        }
+        .help-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .help-dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .help-dropdown-content a:hover {background-color: #f1f1f1}
+        .help-dropdown:hover .help-dropdown-content {display: block;}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="png/icon.png" alt="Иконка сайта" class="icon" width="70" height="70"></a></li>
+                <li><a href="index.html"> Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <div class="dropdown">
+                    <li><a href="pets.html">Выбери друга</a>
+                        <div class="dropdown-content">
+                            <a href="cats.html">Кошки</a>
+                            <a href="dogs.html">Собаки</a>
+                        </div>
+                    </li>
+                </div>
+                <div class="help-dropdown">
+                    <li><a href="#">Как помочь</a>
+                        <div class="help-dropdown-content">
+                            <a href="donate.html">Пожертвовать</a>
+                            <a href="volunteer.html">Стать волонтером</a>
+                            <a href="foster.html">Приютить на время</a>
+                        </div>
+                    </li>
+                </div>
+                <li><a href="contact.html">Контакты</a></li>
+                <div class="contact-details">
+                    <li><a href="mailto:info@petrescue.ru">info@petrescue.ru</a></li>
+                    <li><a href="tel:+79536459463">+7 (953) 645-94-63</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="info-section">
+            <section id="home">
+                <div class="banner"> 
+                    <img src="png/banner.png" alt="Баннер приюта">
+                 </div>
+            </section>
+        <section class="info-section">
+            <h2>Свяжитесь с нами</h2>
+            <p>Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с нами по указанным контактам:</p>
+            <ul>
+                <li>Телефон: <a href="tel:+79536459463">+7 (953) 645-94-63</a></li>
+                <li>Email: <a href="mailto:info@petrescue.ru">info@petrescue.ru</a></li>
+                <li>Адрес: г. Москва, ул. Приютская, д. 12</li>
+            </ul>
+            <p>Мы всегда рады помочь и ответить на ваши вопросы. Также вы можете посетить нас в рабочее время: с 9:00 до 18:00, кроме воскресенья.</p>
+        </section>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Приют "В добрые лапы"</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="png/icon.png">
+    <style>
+ body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffffffe8;
+        }
+        .info-section h1 {
+            color: #9b769b; /* Цвет заголовка */
+            text-align: center; /* Выравнивание по центру */
+            font-size: 28px; /* Размер шрифта заголовка */
+        }
+        .about-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .about-section img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .help-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .help-item {
+            width: 45%;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease; /* Анимация масштабирования */
+        }
+        .help-item:hover {
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+        .review {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: calc(50% - 20px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .review-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .review .nickname {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .review img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 10px;
+            align-self: flex-start;
+        }
+        .review blockquote {
+            font-style: italic;
+            margin: 0;
+            text-align: left;
+        }
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .review-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .help-item:nth-child(1) {
+            background-color:  #e6cece; /* Голубой цвет для спасения и первой помощи */
+        }
+        .help-item:nth-child(2) {
+            background-color:  #e0bfbf; /* Светло-голубой цвет для адаптации и восстановления */
+        }
+        .help-item:nth-child(3) {
+            background-color:  #d9b3b3; /* Светло-зеленый цвет для поиска новых домов */
+        }
+        .help-item:nth-child(4) {
+            background-color: #cc9f9f; /* Зеленый цвет для образования и пропаганды */
+        }
+        .help-item h3 {
+            color: #333;
+        }
+        .help-item p {
+            line-height: 1.6;
+        }
+        .help-dropdown {
+            display: inline-block;
+        }
+        .help-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .help-dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .help-dropdown-content a:hover {background-color: #f1f1f1}
+        .help-dropdown:hover .help-dropdown-content {display: block;}
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown:hover .dropdown-content {display: block;}
+        .help-dropdown {
+            display: inline-block;
+        }
+        .help-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .help-dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .help-dropdown-content a:hover {background-color: #f1f1f1}
+        .help-dropdown:hover .help-dropdown-content {display: block;}
+        .back-to-home a {
+            color:  #9b769b;
+            font-weight: bold; /* Жирный шрифт */
+            transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+        }
+        .back-to-home a:hover {
+            transform: scale(1.1); /* Увеличение размера текста при наведении */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="png/icon.png" alt="Иконка сайта" class="icon" width="70" height="70"></a></li>
+                <li><a href="index.html"> Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <div class="dropdown">
+                    <li><a href="pets.html">Выбери друга</a>
+                        <div class="dropdown-content">
+                            <a href="cats.html">Кошки</a>
+                            <a href="dogs.html">Собаки</a>
+                        </div>
+                    </li>
+                </div>
+                <div class="help-dropdown">
+                    <li><a href="#">Как помочь</a>
+                        <div class="help-dropdown-content">
+                            <a href="donate.html">Пожертвовать</a>
+                            <a href="volunteer.html">Стать волонтером</a>
+                            <a href="foster.html">Приютить на время</a>
+                        </div>
+                    </li>
+                </div>
+                <li><a href="contact.html">Контакты</a></li>
+                <div class="contact-details">
+                        <li><a href="mailto:info@petrescue.ru">info@petrescue.ru</a></li>
+                        <li><a href="tel:+79536459463">+7 (953) 645-94-63</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="info-section">
+            <section id="home">
+                <div class="banner"> 
+                    <img src="png/banner.png" alt="Баннер приюта">
+                 </div>
+            </section>
+            <section class="about-section">
+                <h1>О нас</h1>
+                <p>Добро пожаловать в наш приют для животных! Мы - команда энтузиастов, которая занимается спасением и восстановлением животных, оказавшихся бездомными. Наша миссия - найти для каждого питомца заботливую семью и дом, где он будет любим и уважаться.</p>
+                <p>Мы работаем на благо животных уже более 10 лет. За это время нам удалось помочь сотням питомцев найти своих любящих хозяев. Наша команда состоит из опытных волонтеров, ветеринаров и просто любителей животных, которые делятся своим временем и знаниями ради благополучия наших маленьких друзей.</p>
+                <img src="png/about-us-image.png" alt="Команда приюта">
+                <p>Контакты:</p>
+                <p>Телефон: <a href="tel:+79536459463">+7 (953) 645-94-63</a></p>
+                <p>Email: <a href="mailto:info@animal-shelter.ru">info@animal-shelter.ru</a></p>
+                <p>Адрес: г. Москва, ул. Приютская, д. 10</p>
+                <h2>Как мы помогаем животным</h2>
+                <div class="help-section">
+                    <div class="help-item">
+                        <h3>Спасение и первая помощь</h3>
+                        <p>Наша команда активно занимается поиском и спасением бездомных животных. Мы обеспечиваем первую помощь, лечим травмы и заболевания, а также проводим необходимые вакцинации и стерилизацию.</p>
+                    </div>
+                    <div class="help-item">
+                        <h3>Адаптация и восстановление</h3>
+                        <p>Животные, попавшие в приют, проходят период адаптации. Мы заботимся о них, обеспечиваем уход и создаем благоприятную среду для восстановления их физического и психологического здоровья.</p>
+                    </div>
+                    <div class="help-item">
+                        <h3>Поиск новых домов</h3>
+                        <p>Мы активно работаем над тем, чтобы найти новые дома для наших питомцев. Проводим интервью с потенциальными хозяевами, организуем встречи с животными и следим за тем, как они чувствуют себя в новых семьях.</p>
+                    </div>
+                    <div class="help-item">
+                        <h3>Образование и пропаганда</h3>
+                        <p>Команда приюта проводит образовательные мероприятия, направленные на повышение осведомленности о правах животных и пропаганду гуманного отношения к ним. Мы также помогаем в организации кормления бездомных животных на территориях, где это разрешено.</p>
+                    </div>
+                </div>
+                <h2>Отзывы</h2>
+                <div class="reviews">
+                    <div class="review">
+                        <div class="review-content">
+                            <div class="nickname">Анна С.</div>
+                            <img src="png/avatar1.png" alt="Аватарка пользователя">
+                            <blockquote>
+                                <p>"Очень благодарна команде приюта за помощь в поиске нашего нового друга - котика Мурзика. Теперь он счастлив в нашей семье!"</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="review-content">
+                            <div class="nickname">Дмитрий К.</div>
+                            <img src="png/avatar2.png" alt="Аватарка пользователя">
+                            <blockquote>
+                                <p>"Приют делает поистине важную работу. Спасибо за заботу о бездомных животных и за то, что помогаете им найти дом."</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="review-content">
+                            <div class="nickname">Ольга И.</div>
+                            <img src="png/avatar1.png" alt="Аватарка пользователя">
+                            <blockquote>
+                                <p>"Пушок самый милый песик на свете!! &#128151; Прижился к новому месту и хозяевам очень быстро. Спасибо вашему приюту за такого питомца"</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="review-content">
+                            <div class="nickname">Алексей В.</div>
+                            <img src="png/avatar2.png" alt="Аватарка пользователя">
+                            <blockquote>
+                                <p>"Команда приюта проделала огромную работу, спасая животных. Очень рекомендую всем, кто хочет приютить питомца, обратиться именно сюда."</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                <p class="back-to-home"><a href="index.html">На главную</a></p>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="png/icon.png" alt="Логотип приюта" width="100" height="50">
+            </div>
+            <div class="footer-contacts">
+                <p>Контакты:</p>
+                <p>Адрес: ул. Приютская, 12, г. Москва, Россия</p>
+                <p>Email: <a href="mailto:info@petrescue.ru">info@petrescue.ru</a></p>
+                <p>Телефон: <a href="tel:+79536459463">+7 (953) 645-94-63</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Главная</a> |
+                <a href="about.html">О нас</a> |
+                <a href="contact.html">Контакты</a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2024 Приют для бездомных животных. Все права защищены.
+        </div>
+    </footer>
+</body>
+</html>
